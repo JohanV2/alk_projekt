@@ -1,14 +1,23 @@
 [
     {
+        "id": 1,
         "title": "Mem 1",
         "upvotes": 1,
         "downvotes": 1,
         "img": "path/to/image1.png"
     },
     {
+        "id": 2,
         "title": "Mem 2",
-        "upvotes": 2,
+        "upvotes": 20,
         "downvotes": 2,
         "img": "path/to/image2.png"
+    },
+    {
+        "id": 3,
+        "title": "Mem 3",
+        "upvotes": 16,
+        "downvotes": 10,
+        "img": "path/to/image3.png"
     }
 ]

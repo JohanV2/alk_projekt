@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Mem 1",
+        "upvotes": 1,
+        "downvotes": 1,
+        "img": "path/to/image1.png"
+    },
+    {
+        "title": "Mem 2",
+        "upvotes": 2,
+        "downvotes": 2,
+        "img": "path/to/image2.png"
+    }
+]

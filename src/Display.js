@@ -1,10 +1,12 @@
-export function Display(props) {
-    console.log(props)
+import { AddMeme } from "./AddMeme";
 
+export function Display(props) {
+    const t = props.test
+    console.log(t)
     return (
         <div>
             {props.memesArray.map(meme => {
-                return (
+                return (<div>
                     <div key={meme.id}>
                         <h2>title: {meme.title}</h2>
                         <h2>upvotes: {meme.upvotes}</h2>
@@ -21,8 +23,10 @@ export function Display(props) {
                         }}>
                             Downvote</button>
                     </div>
+                </div>
                 );
             })}
+            <AddMeme memesArray={props.memesArray} test={t} />
         </div>
     )
 }

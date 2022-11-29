@@ -9,8 +9,8 @@ export function Main(props) {
         setMemes([memes])
     }
 
-
+    const t = props.test
     return (
-        <Display onVote={onVote} memesArray={memesArray} />
+        <Display onVote={onVote} memesArray={memesArray} test={t} />
     )
 }

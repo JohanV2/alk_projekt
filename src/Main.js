@@ -1,11 +1,9 @@
 import { useState } from 'react'
 import { Display } from './Display'
 
-export function Hot(props) {
-    const filtered = props.memesArray.filter(meme => {
-        return (meme.upvotes - meme.downvotes > 5)
-    })
+export function Main(props) {
 
+    const memesArray = props.memesArray
     const [memes, setMemes] = useState(props.memesArray)
     function onVote() {
         setMemes([memes])
@@ -13,6 +11,6 @@ export function Hot(props) {
 
 
     return (
-        <Display memesArray={filtered} onVote={onVote} />
+        <Display onVote={onVote} memesArray={memesArray} />
     )
 }

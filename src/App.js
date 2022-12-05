@@ -6,6 +6,7 @@ import Navbar from './Navbar'
 import { Route, Routes } from "react-router-dom"
 import { AddMeme } from './AddMeme';
 import { useState } from 'react';
+import { AddMemeScreen } from './AddMemeScreen';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Main memesArray={memesArray} test={test} />} />
+          <Route path="/addmeme" element={<AddMemeScreen memesArray={memesArray} />} />
           <Route path="/hot" element={<Hot memesArray={memesArray} />} />
           <Route path="/regular" element={<Regular memesArray={memesArray} />} />
         </Routes>

@@ -4,20 +4,20 @@
         "title": "Mem 1",
         "upvotes": 1,
         "downvotes": 1,
-        "img": "path/to/image1.png"
+        "img": "https://images.dog.ceo/breeds/leonberg/n02111129_3595.jpgg"
     },
     {
         "id": 2,
         "title": "Mem 2",
         "upvotes": 20,
         "downvotes": 2,
-        "img": "path/to/image2.png"
+        "img": "https://images.dog.ceo/breeds/bullterrier-staffordshire/n02093256_4658.jpg"
     },
     {
         "id": 3,
         "title": "Mem 3",
         "upvotes": 16,
         "downvotes": 10,
-        "img": "path/to/image3.png"
+        "img": "https://images.dog.ceo/breeds/malamute/n02110063_16539.jpg"
     }
 ]

@@ -13,7 +13,10 @@ export function AddMemeScreen(props) {
         event.preventDefault();
         props.memesArray.push({ id: props.memesArray.length + 1, title: inputs.title, upvotes: 0, downvotes: 0, img: inputs.img })
         setInputs([])
+        console.log(props.memesArray)
     }
+
+    const isValid = false
 
     return (
         <form onSubmit={handleSubmit}>
@@ -23,6 +26,7 @@ export function AddMemeScreen(props) {
                     name="title"
                     value={inputs.title || ""}
                     onChange={handleChange}
+                    required
                 />
             </label>
             <label>Enter image url:
@@ -31,9 +35,10 @@ export function AddMemeScreen(props) {
                     name="img"
                     value={inputs.img || ""}
                     onChange={handleChange}
+                    required
                 />
             </label>
-            <input type="submit" />
+            <input type="submit" value="Send!" />
         </form>
     )
 }

@@ -7,10 +7,10 @@ export default function Navbar() {
         99gag
       </Link>
       <ul>
-      <Routing to="/addmeme">add meme</Routing>
-      <Routing to="/hot">hot</Routing>
-      <Routing to="/regular">regular</Routing>
-    </ul>
+        <Routing to="/addmeme">add meme</Routing>
+        <Routing to="/hot">hot</Routing>
+        <Routing to="/regular">regular</Routing>
+      </ul>
     </nav >
   )
 }

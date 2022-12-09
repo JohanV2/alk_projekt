@@ -31,7 +31,7 @@ export function Display(props) {
                         </div>
                     </div>
                 );
-            })}
+            }).reverse()}
             <AddMeme memesArray={props.memesArray} test={t} />
         </SimpleBarReact>
     )

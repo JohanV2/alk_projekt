@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export function AddMemeScreen(props) {
+    const validUrl = require('valid-url');
     const [inputs, setInputs] = useState({});
 
     const handleChange = (event) => {
@@ -11,12 +12,19 @@ export function AddMemeScreen(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        if (!inputs.title) {
+            return alert("Title can not be empty")
+        }
+        if (inputs.title.length > 30) {
+            return alert("Title too long! Max 30 characters")
+        }
+        if (!validUrl.isUri(inputs.img)) {
+            return alert("Image path must be a valid URL")
+        }
         props.memesArray.push({ id: props.memesArray.length + 1, title: inputs.title, upvotes: 0, downvotes: 0, img: inputs.img })
         setInputs([])
         console.log(props.memesArray)
     }
-
-    const isValid = false
 
     return (
         <form onSubmit={handleSubmit}>
@@ -26,7 +34,7 @@ export function AddMemeScreen(props) {
                     name="title"
                     value={inputs.title || ""}
                     onChange={handleChange}
-                    required
+
                 />
             </label>
             <label>Enter image url:
@@ -35,7 +43,6 @@ export function AddMemeScreen(props) {
                     name="img"
                     value={inputs.img || ""}
                     onChange={handleChange}
-                    required
                 />
             </label>
             <input type="submit" value="Send!" />

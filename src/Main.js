@@ -3,7 +3,7 @@ import { Display } from './Display'
 
 export function Main(props) {
 
-    const memesArray = props.memesArray
+    const memesArrayReversed = props.memesArray.reverse()
     const [memes, setMemes] = useState(props.memesArray)
     function onVote() {
         setMemes([memes])
@@ -11,6 +11,6 @@ export function Main(props) {
 
     const t = props.test
     return (
-        <Display onVote={onVote} memesArray={memesArray} test={t} />
+        <Display onVote={onVote} memesArray={memesArrayReversed} test={t} />
     )
 }

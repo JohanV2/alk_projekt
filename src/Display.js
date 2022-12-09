@@ -14,7 +14,7 @@ export function Display(props) {
                     <div>
                         <div key={meme.id}>
                             <h2>title: {meme.title}</h2>
-                            <img src={meme.img} />
+                            <img src={meme.img} loading="lazy" />
                             <h2>upvotes: {meme.upvotes}</h2>
                             <h2>downvotes: {meme.downvotes}</h2>
                             <hr />

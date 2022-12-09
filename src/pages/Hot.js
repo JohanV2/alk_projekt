@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Display } from './Display'
+import { Display } from '../logic/Display'
 
 export function Hot(props) {
     const filtered = props.memesArray.filter(meme => {

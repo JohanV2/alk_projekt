@@ -1,12 +1,10 @@
 import './App.css';
-import { Main } from './Main';
-import { Hot } from './Hot'
-import { Regular } from './Regular';
-import Navbar from './Navbar'
+import { Main } from './pages/Main';
+import { Hot } from './pages/Hot';
+import { Regular } from './pages/Regular';
+import Navbar from './logic/Navbar'
 import { Route, Routes } from "react-router-dom"
-import { AddMeme } from './AddMeme';
-import { useState } from 'react';
-import { AddMemeScreen } from './AddMemeScreen';
+import { AddMemeScreen } from './pages/AddMemeScreen';
 
 function App() {
 

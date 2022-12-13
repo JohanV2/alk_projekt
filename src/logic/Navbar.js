@@ -5,7 +5,6 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <ul>
-        <Routing to="/addmeme">add meme</Routing>
         <Routing to="/hot">hot</Routing>
         <Routing to="/regular">regular</Routing>
       </ul>
@@ -17,6 +16,7 @@ export function TopBar() {
   return (
     <section className="top-logo">
       <Link to="/" className="main-title">99gag</Link>
+      <Routing to="/addmeme">add meme</Routing>
     </section>
   )
 }
@@ -24,6 +24,14 @@ export function TopBar() {
 function Routing({ to, children, ...props }) {
   const resolvedPath = useResolvedPath(to)
   const isActive = useMatch({ path: resolvedPath.pathname, end: true })
+  if (to === "/addmeme") {
+    return (
+      <Link to={to} {...props} className={isActive ? "active" : ""}>
+        {children}
+      </Link>
+    )
+
+  }
 
   return (
     <li className={isActive ? "active" : ""}>

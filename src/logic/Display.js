@@ -15,7 +15,6 @@ export function Display(props) {
                             <img src={meme.img} loading="lazy" alt={meme.title} />
                             <h2>upvotes: {meme.upvotes}</h2>
                             <h2>downvotes: {meme.downvotes}</h2>
-                            <hr />
                             <button onClick={() => {
                                 meme.upvotes += 1
                                 props.onVote()
@@ -27,6 +26,7 @@ export function Display(props) {
                             }}>
                                 Downvote</button>
                         </div>
+                        <hr />
                     </div>
                 );
             }).reverse()}

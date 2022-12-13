@@ -3,3 +3,10 @@
     margin: 0;
     padding: 0;
 }
+
+$background-primary: rgb(49, 49, 49);
+
+@mixin theme ($background-color: $background-primary) {
+    background-color: $background-color;
+    color: azure
+}

@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { Main } from './pages/Main';
 import { Hot } from './pages/Hot';
 import { Regular } from './pages/Regular';

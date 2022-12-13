@@ -1,33 +1,51 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
+@import "../styles";
+
+@mixin link {
+    text-decoration: none;
+    color: rgb(110, 186, 134)
 }
 
-.main-title {
-    font-size: 2rem;
+.top-logo {
+    height: 5vh;
+    @include theme($background-color: rgb(0, 51, 3));
+
+    a {
+        @include link();
+    }
+
+    a.main-title {
+        @include link();
+        font-size: 2rem;
+    }
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav {
-    background-color: rgb(5, 10, 5);
-    height: 94vh;
-    width: min-content
+    background-color: $background-primary;
+    height: 95vh;
+    width: min-content;
+
+    ul {
+        list-style: none;
+        gap: 2rem;
+
+        a:any-link {
+            @include link()
+        }
+    }
 }
 
-.nav ul {
-    list-style: none;
-    gap: 2rem;
-    background-color: aqua;
-}
 
-.nav a {
-    text-decoration: none;
-    color: rgb(89, 252, 206);
-}
-
-.nav li.active {
-    background-color: red
-}
-
-.nav li:hover {
+li:hover,
+.top-logo a:nth-child(2):hover {
     background-color: rgb(165, 124, 42)
+}
+
+.active {
+    background-color: red
 }

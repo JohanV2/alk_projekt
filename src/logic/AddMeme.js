@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "./AddMeme.scss"
 
 export function AddMeme(props) {
     console.log(props.test)
@@ -9,9 +10,9 @@ export function AddMeme(props) {
     }
 
     return (
-        <div>
-            {/* <button type="button" onClick={props.test}> Add new</button> */}
-            <button type="button" onClick={routeChange}> Add new</button>
+        <div class="footer">
+            <p>Want more memes?</p>
+            <button type="button" onClick={routeChange}> Add new!</button>
         </div >
     );
 };

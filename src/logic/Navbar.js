@@ -1,17 +1,23 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
+import "./Navbar.css"
 
 export default function Navbar() {
   return (
     <nav className="nav">
-      <Link to="/" className="main-title">
-        99gag
-      </Link>
       <ul>
         <Routing to="/addmeme">add meme</Routing>
         <Routing to="/hot">hot</Routing>
         <Routing to="/regular">regular</Routing>
       </ul>
     </nav >
+  )
+}
+
+export function TopBar() {
+  return (
+    <section className="top-logo">
+      <Link to="/" className="main-title">99gag</Link>
+    </section>
   )
 }
 

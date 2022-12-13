@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.main-title {
+    font-size: 2rem;
+}
+
+.nav {
+    background-color: rgb(5, 10, 5);
+    height: 94vh;
+    width: min-content
+}
+
+.nav ul {
+    list-style: none;
+    gap: 2rem;
+    background-color: aqua;
+}
+
+.nav a {
+    text-decoration: none;
+    color: rgb(89, 252, 206);
+}
+
+.nav li.active {
+    background-color: red
+}
+
+.nav li:hover {
+    background-color: rgb(165, 124, 42)
+}

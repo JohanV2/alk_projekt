@@ -1,0 +1,21 @@
+.memes {
+    max-height: 95vh;
+    overflow-y: scroll;
+    width: 90vw;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: flex-start;
+}

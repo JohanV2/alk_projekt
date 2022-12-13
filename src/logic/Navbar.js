@@ -1,5 +1,5 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
-import "./Navbar.css"
+import "./Navbar.scss"
 
 export default function Navbar() {
   return (

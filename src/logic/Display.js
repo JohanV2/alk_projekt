@@ -1,6 +1,6 @@
 import { AddMeme } from "./AddMeme";
 
-import "./Display.css"
+import "./Display.scss"
 
 export function Display(props) {
     const t = props.test

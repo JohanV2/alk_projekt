@@ -5,6 +5,8 @@
 }
 
 $background-primary: rgb(49, 49, 49);
+$green-text: rgb(110, 186, 134);
+$color-purple: rgb(192, 165, 255);
 
 @mixin theme ($background-color: $background-primary) {
     background-color: $background-color;

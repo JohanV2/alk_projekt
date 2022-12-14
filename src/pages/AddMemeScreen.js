@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./AddMemeScreen.scss"
 
 export function AddMemeScreen(props) {
     const validUrl = require('valid-url');
@@ -27,25 +28,27 @@ export function AddMemeScreen(props) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>Enter meme title:
-                <input
-                    type="text"
-                    name="title"
-                    value={inputs.title || ""}
-                    onChange={handleChange}
+        <div class="add-meme-wrapper">
+            <form onSubmit={handleSubmit}>
+                <label>Enter meme title:
+                    <input
+                        type="text"
+                        name="title"
+                        value={inputs.title || ""}
+                        onChange={handleChange}
 
-                />
-            </label>
-            <label>Enter image url:
-                <input
-                    type="text"
-                    name="img"
-                    value={inputs.img || ""}
-                    onChange={handleChange}
-                />
-            </label>
-            <input type="submit" value="Send!" />
-        </form>
+                    />
+                </label>
+                <label>Enter image url:
+                    <input
+                        type="text"
+                        name="img"
+                        value={inputs.img || ""}
+                        onChange={handleChange}
+                    />
+                </label>
+                <input type="submit" value="Send!" />
+            </form>
+        </div>
     )
 }

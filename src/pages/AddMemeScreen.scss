@@ -1,11 +1,17 @@
-@import "../styles";
-
-.footer {
+form {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
     align-content: flex-start;
-    color: $color-purple
+    padding: 0 auto;
+}
+
+label {
+    padding: 20px 0;
+}
+
+.add-meme-wrapper {
+    width: 90vw;
 }

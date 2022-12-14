@@ -13,7 +13,30 @@
     align-content: center;
 
     img {
-        max-width: 89vw;
+        max-width: 87vw;
+        margin-bottom: 10px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        button {
+            margin: 0 5rem;
+        }
+    }
+
+    hr {
+        margin-top: 5px;
+        margin-bottom: 35px;
+        border: 1px solid $green-text
+    }
+}
+
+.meme {
+    h2 {
+        text-align: center;
     }
 }
 

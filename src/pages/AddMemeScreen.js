@@ -47,7 +47,7 @@ export function AddMemeScreen(props) {
                         onChange={handleChange}
                     />
                 </label>
-                <input type="submit" value="Send!" />
+                <input class="send" type="submit" value="Send!" />
             </form>
         </div>
     )

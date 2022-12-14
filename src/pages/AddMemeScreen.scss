@@ -10,8 +10,16 @@ form {
 
 label {
     padding: 20px 0;
+
+    input {
+        margin: 5px;
+    }
 }
 
 .add-meme-wrapper {
     width: 90vw;
+}
+
+input.send {
+    cursor: pointer;
 }

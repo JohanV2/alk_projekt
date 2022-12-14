@@ -4,10 +4,16 @@ import "./Display.scss"
 
 export function Display(props) {
     const t = props.test
-    console.log(t)
+
+    console.log(`godmode is ${props.GODMODE}`)
+
     return (
         <div class="memes">
             {props.memesArray.map(meme => {
+                const switchAble = () => {
+                    meme.upAble = !meme.upAble
+                    meme.downAble = !meme.downAble
+                }
                 return (
                     <div class="meme">
                         <div key={meme.id}>
@@ -17,12 +23,14 @@ export function Display(props) {
                                 <button onClick={() => {
                                     meme.upvotes += 1
                                     props.onVote()
-                                }}>
+                                    switchAble()
+                                }} disabled={!meme.upAble}>
                                     🢁 {meme.upvotes}</button>
                                 <button onClick={() => {
                                     meme.downvotes += 1
                                     props.onVote()
-                                }}>
+                                    switchAble()
+                                }} disabled={!meme.downAble}>
                                     🢃 {meme.downvotes}</button>
                             </div>
                         </div>

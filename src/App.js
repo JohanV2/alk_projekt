@@ -9,6 +9,8 @@ import { AddMemeScreen } from './pages/AddMemeScreen';
 function App() {
 
   let memesArray = require('./memes.json')
+  let GODMODE = false
+  let BTN = false
   let test = () => {
     memesArray = [...memesArray, { title: "Hello", upvotes: 1, downvotes: 1 }]
     console.log(memesArray)
@@ -23,7 +25,7 @@ function App() {
         <Navbar />
         <div class="content">
           <Routes>
-            <Route path="/" element={<Main memesArray={memesArray} test={test} />} />
+            <Route path="/" element={<Main memesArray={memesArray} test={test} GODMODE={GODMODE} BTN={BTN} />} />
             <Route path="/addmeme" element={<AddMemeScreen memesArray={memesArray} />} />
             <Route path="/hot" element={<Hot memesArray={memesArray} />} />
             <Route path="/regular" element={<Regular memesArray={memesArray} />} />

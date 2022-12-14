@@ -9,6 +9,7 @@ export function Hot(props) {
     const [memes, setMemes] = useState(props.memesArray)
     function onVote() {
         setMemes([memes])
+        
     }
 
 

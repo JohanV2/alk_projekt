@@ -12,12 +12,13 @@ export default function Navbar() {
   )
 }
 
-export function TopBar() {
+export function TopBar(props) {
   return (
     <section className="top-logo">
       <Link to="/" className="main-title">99gag</Link>
       <Routing to="/addmeme">add meme</Routing>
-    </section>
+      <button onClick={props.godSwitch}>GOD MODE</button>
+    </section >
   )
 }
 

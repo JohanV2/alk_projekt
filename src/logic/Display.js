@@ -7,16 +7,23 @@ export function Display(props) {
     return (
         <div class="memes">
             {props.memesArray.map(meme => {
-                const switchDownOff = () => {
-                    if (meme.upvotes.includes(props.userName)) {
-                        meme.downAble = !meme.downAble
+
+                const checkUserVotes = (vote, antagonist) => {
+                    const indexVote = vote.indexOf(props.userName)
+                    const indexAntagonist = antagonist.indexOf(props.userName)
+                    if (indexVote > -1 && !indexAntagonist > -1) {
+                        vote.splice(indexVote, 1)
                     }
-                }
-                const switchUpOff = () => {
-                    if (meme.downvotes.includes(props.userName)) {
-                        meme.upAble = !meme.upAble
+                    else if (indexAntagonist > -1) {
+                        vote.push(props.userName)
+                        antagonist.splice(indexAntagonist, 1)
                     }
+                    else {
+                        vote.push(props.userName)
+                    }
+                    props.onVote()
                 }
+
                 return (
                     <div class="meme">
                         <div key={meme.id}>
@@ -24,19 +31,16 @@ export function Display(props) {
                             <img src={meme.img} loading="lazy" alt={meme.title} />
                             <div class="buttons">
                                 <button onClick={() => {
-                                    meme.upvotes.push(props.userName)
-                                    console.log(`godmode on upvoting start is ${props.GODMODE}`)
-                                    props.onVote()
+                                    checkUserVotes(meme.upvotes, meme.downvotes)
                                     if (props.GODMODE === false) {
-                                        switchDownOff()
+                                        // onUpVote()
                                     }
                                 }} disabled={!meme.upAble}>
                                     🢁 {meme.upvotes.length}</button>
                                 <button onClick={() => {
-                                    meme.downvotes.push(props.userName)
-                                    props.onVote()
+                                    checkUserVotes(meme.downvotes, meme.upvotes)
                                     if (props.GODMODE === false) {
-                                        switchUpOff()
+                                        // onDownVote()
                                     }
                                 }} disabled={!meme.downAble}>
                                     🢃 {meme.downvotes.length}</button>

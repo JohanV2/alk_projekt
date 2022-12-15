@@ -37,8 +37,8 @@ export function Display(props) {
                     }
 
                     return (
-                        <div className="meme">
-                            <div key={meme.id}>
+                        <div key={meme.id} className="meme">
+                            <div>
                                 <h2>{meme.title}</h2>
                                 <img src={meme.img} loading="lazy" alt={meme.title} />
                                 <div className="buttons">

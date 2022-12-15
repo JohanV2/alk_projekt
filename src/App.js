@@ -20,13 +20,20 @@ function App() {
 
   let godSwitch = () => {
     console.log(`godmode before switch: ${GODMODE}`)
+
+    memesArray.map((meme) => {
+      meme.upAble = true
+      meme.downAble = true
+      return (null)
+    }
+    )
     setGod(!GODMODE)
     console.log(`godmode after switch: ${GODMODE}`)
   }
 
   return (
     <>
-      <TopBar godSwitch={godSwitch} />
+      <TopBar godSwitch={godSwitch} GODMODE={GODMODE} />
       <div class="wrapper">
         <Navbar />
         <div class="content">

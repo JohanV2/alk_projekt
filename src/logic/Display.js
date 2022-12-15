@@ -1,5 +1,4 @@
 import { AddMeme } from "./AddMeme";
-import { useState } from "react";
 
 import "./Display.scss"
 
@@ -7,9 +6,6 @@ export function Display(props) {
     const t = props.test
 
     console.log(`godmode in display component is ${props.GODMODE}`)
-
-
-
 
     return (
         <div class="memes">
@@ -31,6 +27,9 @@ export function Display(props) {
                                     if (props.GODMODE === false) {
                                         switchAble()
                                     }
+                                    // if (props.GODMODE === true) {
+                                    //     props.onGodModeOn()
+                                    // }
                                     console.log(`godmode after upvoting is ${props.GODMODE}`)
                                 }} disabled={!meme.upAble}>
                                     🢁 {meme.upvotes}</button>

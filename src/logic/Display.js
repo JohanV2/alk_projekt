@@ -7,9 +7,15 @@ export function Display(props) {
     return (
         <div class="memes">
             {props.memesArray.map(meme => {
-                const switchAble = () => {
-                    meme.upAble = !meme.upAble
-                    meme.downAble = !meme.downAble
+                const switchDownOff = () => {
+                    if (meme.upvotes.includes(props.userName)) {
+                        meme.downAble = !meme.downAble
+                    }
+                }
+                const switchUpOff = () => {
+                    if (meme.downvotes.includes(props.userName)) {
+                        meme.upAble = !meme.upAble
+                    }
                 }
                 return (
                     <div class="meme">
@@ -22,7 +28,7 @@ export function Display(props) {
                                     console.log(`godmode on upvoting start is ${props.GODMODE}`)
                                     props.onVote()
                                     if (props.GODMODE === false) {
-                                        switchAble()
+                                        switchDownOff()
                                     }
                                 }} disabled={!meme.upAble}>
                                     🢁 {meme.upvotes.length}</button>
@@ -30,7 +36,7 @@ export function Display(props) {
                                     meme.downvotes.push(props.userName)
                                     props.onVote()
                                     if (props.GODMODE === false) {
-                                        switchAble()
+                                        switchUpOff()
                                     }
                                 }} disabled={!meme.downAble}>
                                     🢃 {meme.downvotes.length}</button>

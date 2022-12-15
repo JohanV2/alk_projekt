@@ -3,7 +3,7 @@ import { Display } from '../logic/Display'
 
 export function Regular(props) {
     const filtered = props.memesArray.filter(meme => {
-        return (!(meme.upvotes - meme.downvotes > 5))
+        return (!(meme.upvotes.length - meme.downvotes.length > 5))
     })
 
     const [memes, setMemes] = useState(props.memesArray)

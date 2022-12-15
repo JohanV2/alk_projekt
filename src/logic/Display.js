@@ -3,9 +3,6 @@ import { AddMeme } from "./AddMeme";
 import "./Display.scss"
 
 export function Display(props) {
-    const t = props.test
-
-    console.log(`godmode in display component is ${props.GODMODE}`)
 
     return (
         <div class="memes">
@@ -27,10 +24,6 @@ export function Display(props) {
                                     if (props.GODMODE === false) {
                                         switchAble()
                                     }
-                                    // if (props.GODMODE === true) {
-                                    //     props.onGodModeOn()
-                                    // }
-                                    console.log(`godmode after upvoting is ${props.GODMODE}`)
                                 }} disabled={!meme.upAble}>
                                     🢁 {meme.upvotes}</button>
                                 <button onClick={() => {
@@ -47,7 +40,7 @@ export function Display(props) {
                     </div>
                 );
             }).reverse()}
-            <AddMeme memesArray={props.memesArray} test={t} />
+            <AddMeme memesArray={props.memesArray} />
         </div >
     )
 }

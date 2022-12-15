@@ -18,9 +18,8 @@ export function Main(props) {
     //     setMemes([memes])
     // }
 
-    const t = props.test
     return (
-        <Display onVote={onVote} memesArray={memesArrayReversed} test={t} GODMODE={props.GODMODE} BTN={props.BTN} />
+        <Display onVote={onVote} memesArray={memesArrayReversed} GODMODE={props.GODMODE} BTN={props.BTN} />
     )
 }
 

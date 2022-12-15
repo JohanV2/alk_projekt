@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./AddMeme.scss"
 
-export function AddMeme(props) {
-    console.log(props.test)
+export function AddMeme() {
 
     let navigate = useNavigate();
     const routeChange = () => {

@@ -1,6 +1,5 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import "./Navbar.scss"
-import { useState } from "react"
 
 export default function Navbar() {
   return (
@@ -14,7 +13,6 @@ export default function Navbar() {
 }
 
 export function TopBar(props) {
-  console.log(props.GODMODE)
   return (
     <section className="top-logo">
       <Link to="/" className="main-title">99gag</Link>

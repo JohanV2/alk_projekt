@@ -10,7 +10,7 @@ export function Main(props) {
         setMemes([memes])
     }
     return (
-        <Display onVote={onVote} memesArray={memesArrayReversed} GODMODE={props.GODMODE} BTN={props.BTN} userName={props.userName} />
+        <Display onVote={onVote} memesArray={memesArrayReversed} GODMODE={props.GODMODE} userName={props.userName} />
     )
 }
 

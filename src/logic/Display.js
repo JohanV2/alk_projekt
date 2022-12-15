@@ -6,6 +6,7 @@ export function Display(props) {
         <div className="memes" >
             {
                 props.memesArray.map(meme => {
+
                     const voteClick = (vote, antagonist, buttonType) => {
                         if (props.GODMODE === false) {
                             checkUserVotes(vote, antagonist, buttonType)
@@ -45,6 +46,11 @@ export function Display(props) {
                         vote.push("GOD")
                         props.onVote()
                     }
+                    const rememberButtonVoteColors = (vote) => {
+                        if (vote.indexOf(props.userName) > -1) {
+                            return ("active-vote")
+                        } else return null
+                    }
 
                     return (
                         <div key={meme.id} className="meme">
@@ -54,11 +60,11 @@ export function Display(props) {
                                 <div className="buttons">
                                     <button id={meme.id + "u"} onClick={() => {
                                         voteClick(meme.upvotes, meme.downvotes, "u")
-                                    }}>
+                                    }} className={rememberButtonVoteColors(meme.upvotes)}>
                                         🢁 {meme.upvotes.length}</button>
                                     <button id={meme.id + "d"} onClick={() => {
                                         voteClick(meme.downvotes, meme.upvotes, "d")
-                                    }}>
+                                    }} className={rememberButtonVoteColors(meme.downvotes)}>
                                         🢃 {meme.downvotes.length}</button>
                                 </div>
                             </div>

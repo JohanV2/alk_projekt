@@ -28,7 +28,7 @@ export function AddMemeScreen(props) {
     }
 
     return (
-        <div class="add-meme-wrapper">
+        <div className="add-meme-wrapper">
             <form onSubmit={handleSubmit}>
                 <label>Enter meme title:
                     <input
@@ -47,7 +47,7 @@ export function AddMemeScreen(props) {
                         onChange={handleChange}
                     />
                 </label>
-                <input class="send" type="submit" value="Send!" />
+                <input className="send" type="submit" value="Send!" />
             </form>
         </div>
     )

@@ -9,7 +9,7 @@ export function AddMeme() {
     }
 
     return (
-        <div class="footer">
+        <div className="footer">
             <p>Want more memes?</p>
             <button type="button" onClick={routeChange}> Add new!</button>
         </div >

@@ -29,9 +29,9 @@ function App() {
   return (
     <>
       <TopBar godSwitch={godSwitch} GODMODE={GODMODE} />
-      <div class="wrapper">
+      <div className="wrapper">
         <Navbar />
-        <div class="content">
+        <div className="content">
           <Routes>
             <Route path="/" element={<Main memesArray={memesArray} GODMODE={GODMODE} userName={userName} />} />
             <Route path="/addmeme" element={<AddMemeScreen memesArray={memesArray} userName={userName} />} />

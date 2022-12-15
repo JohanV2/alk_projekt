@@ -33,8 +33,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Main memesArray={memesArray} GODMODE={GODMODE} />} />
             <Route path="/addmeme" element={<AddMemeScreen memesArray={memesArray} />} />
-            <Route path="/hot" element={<Hot memesArray={memesArray} />} />
-            <Route path="/regular" element={<Regular memesArray={memesArray} />} />
+            <Route path="/hot" element={<Hot memesArray={memesArray} GODMODE={GODMODE} />} />
+            <Route path="/regular" element={<Regular memesArray={memesArray} GODMODE={GODMODE} />} />
           </Routes>
         </div>
       </div>

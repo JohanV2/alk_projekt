@@ -13,6 +13,6 @@ export function Regular(props) {
 
 
     return (
-        <Display memesArray={filtered} onVote={onVote} />
+        <Display memesArray={filtered} onVote={onVote} GODMODE={props.GODMODE} />
     )
 }

@@ -9,15 +9,6 @@ export function Main(props) {
     function onVote() {
         setMemes([memes])
     }
-
-    // function onGodModeOn() {
-    //     props.memesArray.map(meme => {
-    //         meme.upAble = true
-    //         meme.downAble = true
-    //     })
-    //     setMemes([memes])
-    // }
-
     return (
         <Display onVote={onVote} memesArray={memesArrayReversed} GODMODE={props.GODMODE} BTN={props.BTN} />
     )

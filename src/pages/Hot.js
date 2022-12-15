@@ -9,11 +9,9 @@ export function Hot(props) {
     const [memes, setMemes] = useState(props.memesArray)
     function onVote() {
         setMemes([memes])
-        
     }
 
-
     return (
-        <Display memesArray={filtered} onVote={onVote} />
+        <Display memesArray={filtered} onVote={onVote} GODMODE={props.GODMODE} />
     )
 }

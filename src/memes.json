@@ -2,8 +2,12 @@
     {
         "id": 1,
         "title": "Mem 1",
-        "upvotes": 1,
-        "downvotes": 1,
+        "upvotes": [
+            "u2"
+        ],
+        "downvotes": [
+            "u3"
+        ],
         "img": "httpps://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "upAble": true,
         "downAble": true
@@ -11,8 +15,21 @@
     {
         "id": 2,
         "title": "Mem 2",
-        "upvotes": 20,
-        "downvotes": 2,
+        "upvotes": [
+            "u2",
+            "u3",
+            "u4",
+            "u5",
+            "u6",
+            "u7",
+            "u8",
+            "u9",
+            "u10"
+        ],
+        "downvotes": [
+            "u11",
+            "u12"
+        ],
         "img": "https://images.dog.ceo/breeds/bullterrier-staffordshire/n02093256_4658.jpg",
         "upAble": true,
         "downAble": true
@@ -20,8 +37,28 @@
     {
         "id": 3,
         "title": "Mem 3",
-        "upvotes": 16,
-        "downvotes": 10,
+        "upvotes": [
+            "u2",
+            "u3",
+            "u4",
+            "u5",
+            "u6",
+            "u7",
+            "u8",
+            "u9",
+            "u10"
+        ],
+        "downvotes": [
+            "u56",
+            "u57",
+            "u58",
+            "u59",
+            "u60",
+            "u61",
+            "u62",
+            "u63",
+            "u64"
+        ],
         "img": "https://images.dog.ceo/breeds/malamute/n02110063_16539.jpg",
         "upAble": true,
         "downAble": true

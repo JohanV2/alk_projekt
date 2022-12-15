@@ -22,7 +22,7 @@ export function AddMemeScreen(props) {
         if (!validUrl.isUri(inputs.img)) {
             return alert("Image path must be a valid URL")
         }
-        props.memesArray.push({ id: props.memesArray.length + 1, title: inputs.title, upvotes: 0, downvotes: 0, img: inputs.img, upAble: true, downAble: true })
+        props.memesArray.push({ id: props.memesArray.length + 1, title: inputs.title, upvotes: [], downvotes: [], img: inputs.img, upAble: true, downAble: true })
         setInputs([])
         console.log(props.memesArray)
     }

@@ -13,6 +13,8 @@ function App() {
 
   const [GODMODE, setGod] = useState(false)
 
+  const userName = "myUser"
+
   let godSwitch = () => {
 
     memesArray.map((meme) => {
@@ -31,10 +33,10 @@ function App() {
         <Navbar />
         <div class="content">
           <Routes>
-            <Route path="/" element={<Main memesArray={memesArray} GODMODE={GODMODE} />} />
-            <Route path="/addmeme" element={<AddMemeScreen memesArray={memesArray} />} />
-            <Route path="/hot" element={<Hot memesArray={memesArray} GODMODE={GODMODE} />} />
-            <Route path="/regular" element={<Regular memesArray={memesArray} GODMODE={GODMODE} />} />
+            <Route path="/" element={<Main memesArray={memesArray} GODMODE={GODMODE} userName={userName} />} />
+            <Route path="/addmeme" element={<AddMemeScreen memesArray={memesArray} userName={userName} />} />
+            <Route path="/hot" element={<Hot memesArray={memesArray} GODMODE={GODMODE} userName={userName} />} />
+            <Route path="/regular" element={<Regular memesArray={memesArray} GODMODE={GODMODE} userName={userName} />} />
           </Routes>
         </div>
       </div>

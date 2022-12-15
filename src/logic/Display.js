@@ -18,22 +18,22 @@ export function Display(props) {
                             <img src={meme.img} loading="lazy" alt={meme.title} />
                             <div class="buttons">
                                 <button onClick={() => {
-                                    meme.upvotes += 1
+                                    meme.upvotes.push(props.userName)
                                     console.log(`godmode on upvoting start is ${props.GODMODE}`)
                                     props.onVote()
                                     if (props.GODMODE === false) {
                                         switchAble()
                                     }
                                 }} disabled={!meme.upAble}>
-                                    🢁 {meme.upvotes}</button>
+                                    🢁 {meme.upvotes.length}</button>
                                 <button onClick={() => {
-                                    meme.downvotes += 1
+                                    meme.downvotes.push(props.userName)
                                     props.onVote()
                                     if (props.GODMODE === false) {
                                         switchAble()
                                     }
                                 }} disabled={!meme.downAble}>
-                                    🢃 {meme.downvotes}</button>
+                                    🢃 {meme.downvotes.length}</button>
                             </div>
                         </div>
                         <hr />

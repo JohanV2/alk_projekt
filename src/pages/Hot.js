@@ -12,6 +12,6 @@ export function Hot(props) {
     }
 
     return (
-        <Display memesArray={filtered} onVote={onVote} GODMODE={props.GODMODE} />
+        <Display memesArray={filtered} onVote={onVote} GODMODE={props.GODMODE}userName={props.userName} />
     )
 }

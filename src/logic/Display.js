@@ -2,8 +2,6 @@ import { AddMeme } from "./AddMeme";
 import "./Display.scss"
 
 export function Display(props) {
-    const buttonColorActive = "rgb(59, 92, 255)";
-    const buttonColorInactive = "rgb(168, 168, 168)";
     return (
         <div className="memes" >
             {
@@ -28,18 +26,18 @@ export function Display(props) {
                         const indexAntagonist = antagonist.indexOf(props.userName)
                         if (indexVote > -1 && !indexAntagonist > -1) {
                             vote.splice(indexVote, 1)
-                            document.getElementById(meme.id + buttonType).style.backgroundColor = buttonColorInactive
+                            document.getElementById(meme.id + buttonType).classList.remove("active-vote")
                         }
                         else if (indexAntagonist > -1) {
                             vote.push(props.userName)
-                            document.getElementById(meme.id + buttonType).style.backgroundColor = buttonColorActive
+                            document.getElementById(meme.id + buttonType).classList.add("active-vote")
 
                             antagonist.splice(indexAntagonist, 1)
-                            document.getElementById(meme.id + antagonistButtonType).style.backgroundColor = buttonColorInactive
+                            document.getElementById(meme.id + antagonistButtonType).classList.remove("active-vote")
                         }
                         else {
                             vote.push(props.userName)
-                            document.getElementById(meme.id + buttonType).style.backgroundColor = buttonColorActive
+                            document.getElementById(meme.id + buttonType).classList.add("active-vote")
                         }
                         props.onVote()
                     }

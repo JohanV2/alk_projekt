@@ -27,8 +27,11 @@
             cursor: pointer;
             width: 4rem;
             height: 2rem;
-            background-color: rgb(168, 168, 168)
-            rgb(59, 92, 255)
+            background-color: rgb(168, 168, 168);
+        }
+
+        .active-vote {
+            background-color: rgb(59, 92, 255);
         }
     }
 

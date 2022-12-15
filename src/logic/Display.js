@@ -23,6 +23,10 @@ export function Display(props) {
                     }
                     props.onVote()
                 }
+                const godModeVotes = (vote) => {
+                    vote.push("GODVOTE")
+                    props.onVote()
+                }
 
                 return (
                     <div class="meme">
@@ -31,17 +35,20 @@ export function Display(props) {
                             <img src={meme.img} loading="lazy" alt={meme.title} />
                             <div class="buttons">
                                 <button onClick={() => {
-                                    checkUserVotes(meme.upvotes, meme.downvotes)
                                     if (props.GODMODE === false) {
-                                        // onUpVote()
+                                        checkUserVotes(meme.upvotes, meme.downvotes)
+                                    } else {
+                                        godModeVotes(meme.upvotes)
                                     }
                                 }} disabled={!meme.upAble}>
                                     🢁 {meme.upvotes.length}</button>
                                 <button onClick={() => {
-                                    checkUserVotes(meme.downvotes, meme.upvotes)
                                     if (props.GODMODE === false) {
-                                        // onDownVote()
+                                        checkUserVotes(meme.downvotes, meme.upvotes)
+                                    } else {
+                                        godModeVotes(meme.downvotes)
                                     }
+
                                 }} disabled={!meme.downAble}>
                                     🢃 {meme.downvotes.length}</button>
                             </div>

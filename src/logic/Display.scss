@@ -43,8 +43,18 @@
 }
 
 .meme {
+    .meme-top {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+        align-content: flex-start;
+    }
+
     h2 {
         text-align: center;
+        margin-bottom: 3px;
     }
 }
 

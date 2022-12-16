@@ -54,19 +54,19 @@ export function Display(props) {
 
                     return (
                         <div key={meme.id} className="meme">
-                            <div>
+                            <div className="meme-top">
                                 <h2>{meme.title}</h2>
                                 <img src={meme.img} loading="lazy" alt={meme.title} />
-                                <div className="buttons">
-                                    <button id={meme.id + "u"} onClick={() => {
-                                        voteClick(meme.upvotes, meme.downvotes, "u")
-                                    }} className={rememberButtonVoteColors(meme.upvotes)}>
-                                        🢁 {meme.upvotes.length}</button>
-                                    <button id={meme.id + "d"} onClick={() => {
-                                        voteClick(meme.downvotes, meme.upvotes, "d")
-                                    }} className={rememberButtonVoteColors(meme.downvotes)}>
-                                        🢃 {meme.downvotes.length}</button>
-                                </div>
+                            </div>
+                            <div className="buttons">
+                                <button id={meme.id + "u"} onClick={() => {
+                                    voteClick(meme.upvotes, meme.downvotes, "u")
+                                }} className={rememberButtonVoteColors(meme.upvotes)}>
+                                    🢁 {meme.upvotes.length}</button>
+                                <button id={meme.id + "d"} onClick={() => {
+                                    voteClick(meme.downvotes, meme.upvotes, "d")
+                                }} className={rememberButtonVoteColors(meme.downvotes)}>
+                                    🢃 {meme.downvotes.length}</button>
                             </div>
                             <hr />
                         </div>

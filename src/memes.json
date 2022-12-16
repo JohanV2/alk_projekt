@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "title": "Mem 1",
+        "title": "Random dog",
         "upvotes": [
             "u2"
         ],
@@ -12,7 +12,7 @@
     },
     {
         "id": 2,
-        "title": "Mem 2",
+        "title": "My friend's friend",
         "upvotes": [
             "u2",
             "u3",
@@ -32,7 +32,7 @@
     },
     {
         "id": 3,
-        "title": "Mem 3",
+        "title": "Good boy",
         "upvotes": [
             "u2",
             "u3",
@@ -56,5 +56,48 @@
             "u64"
         ],
         "img": "https://images.dog.ceo/breeds/malamute/n02110063_16539.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Snow boy",
+        "upvotes": [
+            "u2",
+            "u3",
+            "u4",
+            "u5",
+            "u6"
+        ],
+        "downvotes": [],
+        "img": "https://images.dog.ceo/breeds/malamute/n02110063_14230.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Look at my new hairstyle my master made me.... heeelp....",
+        "upvotes": [
+            "u77"
+        ],
+        "downvotes": [
+            "u2",
+            "u3",
+            "u4",
+            "u5",
+            "u6",
+            "u66"
+        ],
+        "img": "https://images.dog.ceo/breeds/terrier-bedlington/n02093647_1346.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Today I was a good dog",
+        "upvotes": [
+            "u2",
+            "u3",
+            "u4",
+            "u5",
+            "u6",
+            "u66"
+        ],
+        "downvotes": [],
+        "img": "https://images.dog.ceo/breeds/collie-border/n02106166_1284.jpg"
     }
 ]

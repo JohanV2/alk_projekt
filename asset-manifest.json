@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/alk_projekt/static/css/main.3a1e0edf.css",
+    "main.js": "/alk_projekt/static/js/main.f77653d4.js",
+    "index.html": "/alk_projekt/index.html",
+    "main.3a1e0edf.css.map": "/alk_projekt/static/css/main.3a1e0edf.css.map",
+    "main.f77653d4.js.map": "/alk_projekt/static/js/main.f77653d4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a1e0edf.css",
+    "static/js/main.f77653d4.js"
+  ]
+}

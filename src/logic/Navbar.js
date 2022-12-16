@@ -5,8 +5,8 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <ul>
-        <Routing to="/hot">hot</Routing>
-        <Routing to="/regular">regular</Routing>
+        <Routing to="/alk_projekt/hot">hot</Routing>
+        <Routing to="/alk_projekt/regular">regular</Routing>
       </ul>
     </nav >
   )
@@ -15,9 +15,11 @@ export default function Navbar() {
 export function TopBar(props) {
   return (
     <section className="top-logo">
-      <Link to="/" className="main-title">99gag</Link>
-      <Routing to="/addmeme">add meme</Routing>
-      <button onClick={props.godSwitch} style={{ backgroundColor: props.GODMODE ? "red" : "white" }}>GOD MODE</button>
+      <Link to="/alk_projekt/" className="main-title">99gag</Link>
+      <div className="right-top">
+        <Routing to="/alk_projekt/addmeme">add meme</Routing>
+        <button onClick={props.godSwitch} style={{ backgroundColor: props.GODMODE ? "red" : "transparent" }}>GOD MODE</button>
+      </div>
     </section >
   )
 }
@@ -25,7 +27,7 @@ export function TopBar(props) {
 function Routing({ to, children, ...props }) {
   const resolvedPath = useResolvedPath(to)
   const isActive = useMatch({ path: resolvedPath.pathname, end: true })
-  if (to === "/addmeme") {
+  if (to === "/alk_projekt/addmeme") {
     return (
       <Link to={to} {...props} className={isActive ? "active" : ""}>
         {children}

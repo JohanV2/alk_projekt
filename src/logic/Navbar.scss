@@ -48,6 +48,14 @@
     }
 }
 
+.top-logo {
+    button {
+        color: whitesmoke;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+}
+
 .active a,
 a.active {
     color: $color-purple !important;

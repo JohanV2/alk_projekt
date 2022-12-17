@@ -9,39 +9,8 @@ export function Display(props) {
             {
                 props.memesArray.map(meme => {
 
-                    // const voteClick = (actionType) => {
-                    //     if (props.GODMODE === false) {
-                    //         checkUserVotes(vote, antagonist, buttonType)
-                    //     } else {
-                    //         godModeVotes(vote)
-                    //     }
-                    // }
                     const voteClick = (actionType) => {
-                        // let antagonistButtonType = ""
-                        // if (buttonType === "u") {
-                        //     antagonistButtonType = "d"
-                        // } else if (buttonType === "d") {
-                        //     antagonistButtonType = "u"
-                        // } else {
-                        //     console.log("wrong button type")
-                        // }
-                        // const indexVote = vote.indexOf(props.userName)
-                        // const indexAntagonist = antagonist.indexOf(props.userName)
-                        // if (indexVote > -1 && !indexAntagonist > -1) {
-                        //     vote.splice(indexVote, 1)
-                        //     // document.getElementById(meme.id + buttonType).classList.remove("active-vote")
-                        // }
-                        // else if (indexAntagonist > -1) {
-                        //     vote.push(props.userName)
-                        //     // document.getElementById(meme.id + buttonType).classList.add("active-vote")
 
-                        //     antagonist.splice(indexAntagonist, 1)
-                        //     // document.getElementById(meme.id + antagonistButtonType).classList.remove("active-vote")
-                        // }
-                        // else {
-                        //     vote.push(props.userName)
-                        //     // document.getElementById(meme.id + buttonType).classList.add("active-vote")
-                        // }
                         if (props.GODMODE) {
                             if (actionType === "upvote") {
                                 meme.upvotes = [...meme.upvotes, "GOD"]
@@ -76,17 +45,9 @@ export function Display(props) {
 
                         props.onVote(meme)
                     }
-                    // const godModeVotes = (vote) => {
-                    //     vote.push("GOD")
-                    //     props.onVote()
-                    // }
-                    // const rememberButtonVoteColors = (vote) => {
-                    //     if (vote.indexOf(props.userName) > -1) {
-                    //         return ("active-vote")
-                    //     } else return null
-                    // }
 
                     const isUpvoteActive = meme.upvotes.includes(userName)
+                    const isDownvoteActive = meme.downvotes.includes(userName)
 
                     return (
                         <div key={meme.id} className="meme">
@@ -101,7 +62,7 @@ export function Display(props) {
                                     🢁 {meme.upvotes.length}</button>
                                 <button id={meme.id + "d"} onClick={() => {
                                     voteClick("downvote")
-                                }} >
+                                }} className={isDownvoteActive ? "active-vote" : ""}>
                                     🢃 {meme.downvotes.length}</button>
                             </div>
                             <hr />

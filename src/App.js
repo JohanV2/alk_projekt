@@ -6,6 +6,7 @@ import Navbar, { TopBar } from './logic/Navbar'
 import { Route, Routes } from "react-router-dom"
 import { AddMemeScreen } from './pages/AddMemeScreen';
 import { useState } from 'react';
+export const userName = "myUser"
 
 function App() {
 
@@ -13,18 +14,11 @@ function App() {
 
   const [GODMODE, setGod] = useState(false)
 
-  const userName = "myUser"
-
   let godSwitch = () => {
-
-    memesArray.map((meme) => {
-      meme.upAble = true
-      meme.downAble = true
-      return (null)
-    }
-    )
     setGod(!GODMODE)
   }
+
+  const [memes, setMemes] = useState(memesArray)
 
   return (
     <>
@@ -33,10 +27,10 @@ function App() {
         <Navbar />
         <div className="content">
           <Routes>
-            <Route path="/alk_projekt" element={<Main memesArray={memesArray} GODMODE={GODMODE} userName={userName} />} />
-            <Route path="/alk_projekt/addmeme" element={<AddMemeScreen memesArray={memesArray} userName={userName} />} />
-            <Route path="/alk_projekt/hot" element={<Hot memesArray={memesArray} GODMODE={GODMODE} userName={userName} />} />
-            <Route path="/alk_projekt/regular" element={<Regular memesArray={memesArray} GODMODE={GODMODE} userName={userName} />} />
+            <Route path="/alk_projekt" element={<Main memes={memes} setMemes={setMemes} GODMODE={GODMODE} userName={userName} />} />
+            <Route path="/alk_projekt/addmeme" element={<AddMemeScreen memes={memes} setMemes={setMemes} userName={userName} />} />
+            <Route path="/alk_projekt/hot" element={<Hot memes={memes} setMemes={setMemes} GODMODE={GODMODE} userName={userName} />} />
+            <Route path="/alk_projekt/regular" element={<Regular memes={memes} setMemes={setMemes} GODMODE={GODMODE} userName={userName} />} />
           </Routes>
         </div>
       </div>

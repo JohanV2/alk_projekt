@@ -1,15 +1,21 @@
-import { useState } from 'react'
 import { Display } from '../logic/Display'
 
 export function Hot(props) {
-    const filtered = props.memesArray.filter(meme => {
+    const { memes, setMemes } = props
+
+    const onVote = (meme) => {
+        setMemes(memes.map(memeItem => {
+            if (meme.id === memeItem.id) {
+                return meme
+            }
+            return memeItem
+        }))
+        console.log(memes)
+    }
+    const filtered = memes.filter(meme => {
         return (meme.upvotes.length - meme.downvotes.length > 5)
     })
 
-    const [memes, setMemes] = useState(props.memesArray)
-    function onVote() {
-        setMemes([memes])
-    }
 
     return (
         <Display memesArray={filtered} onVote={onVote} GODMODE={props.GODMODE} userName={props.userName} />

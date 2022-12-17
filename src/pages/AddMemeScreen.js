@@ -17,12 +17,12 @@ export function AddMemeScreen(props) {
             return alert("Title can not be empty")
         }
         if (inputs.title.length > 30) {
-            return alert("Title too long! Max 30 characters")
+            return alert("Title to long! Max 30 characters")
         }
         if (!validUrl.isUri(inputs.img)) {
             return alert("Image path must be a valid URL")
         }
-        props.memesArray.push({ id: props.memesArray.length + 1, title: inputs.title, upvotes: [], downvotes: [], img: inputs.img, upAble: true, downAble: true })
+        props.memesArray.push({ id: props.memesArray.length + 1, title: inputs.title, upvotes: [], downvotes: [], img: inputs.img })
         setInputs([])
         console.log(props.memesArray)
     }

@@ -1,56 +1,92 @@
 import { AddMeme } from "./AddMeme";
 import "./Display.scss"
+import { userName } from "../App"
 
 export function Display(props) {
+    console.log(userName)
     return (
         <div className="memes" >
             {
                 props.memesArray.map(meme => {
 
-                    const voteClick = (vote, antagonist, buttonType) => {
-                        if (props.GODMODE === false) {
-                            checkUserVotes(vote, antagonist, buttonType)
-                        } else {
-                            godModeVotes(vote)
-                        }
-                    }
-                    const checkUserVotes = (vote, antagonist, buttonType) => {
-                        let antagonistButtonType = ""
-                        if (buttonType === "u") {
-                            antagonistButtonType = "d"
-                        } else if (buttonType === "d") {
-                            antagonistButtonType = "u"
-                        } else {
-                            console.log("wrong button type")
-                        }
-                        const indexVote = vote.indexOf(props.userName)
-                        const indexAntagonist = antagonist.indexOf(props.userName)
-                        if (indexVote > -1 && !indexAntagonist > -1) {
-                            vote.splice(indexVote, 1)
-                            document.getElementById(meme.id + buttonType).classList.remove("active-vote")
-                        }
-                        else if (indexAntagonist > -1) {
-                            vote.push(props.userName)
-                            document.getElementById(meme.id + buttonType).classList.add("active-vote")
+                    // const voteClick = (actionType) => {
+                    //     if (props.GODMODE === false) {
+                    //         checkUserVotes(vote, antagonist, buttonType)
+                    //     } else {
+                    //         godModeVotes(vote)
+                    //     }
+                    // }
+                    const voteClick = (actionType) => {
+                        // let antagonistButtonType = ""
+                        // if (buttonType === "u") {
+                        //     antagonistButtonType = "d"
+                        // } else if (buttonType === "d") {
+                        //     antagonistButtonType = "u"
+                        // } else {
+                        //     console.log("wrong button type")
+                        // }
+                        // const indexVote = vote.indexOf(props.userName)
+                        // const indexAntagonist = antagonist.indexOf(props.userName)
+                        // if (indexVote > -1 && !indexAntagonist > -1) {
+                        //     vote.splice(indexVote, 1)
+                        //     // document.getElementById(meme.id + buttonType).classList.remove("active-vote")
+                        // }
+                        // else if (indexAntagonist > -1) {
+                        //     vote.push(props.userName)
+                        //     // document.getElementById(meme.id + buttonType).classList.add("active-vote")
 
-                            antagonist.splice(indexAntagonist, 1)
-                            document.getElementById(meme.id + antagonistButtonType).classList.remove("active-vote")
+                        //     antagonist.splice(indexAntagonist, 1)
+                        //     // document.getElementById(meme.id + antagonistButtonType).classList.remove("active-vote")
+                        // }
+                        // else {
+                        //     vote.push(props.userName)
+                        //     // document.getElementById(meme.id + buttonType).classList.add("active-vote")
+                        // }
+                        if (props.GODMODE) {
+                            if (actionType === "upvote") {
+                                meme.upvotes = [...meme.upvotes, "GOD"]
+                            }
+                            else if (actionType === "downvote") {
+                                meme.downvotes = [...meme.downvotes, "GOD"]
+                            }
+                            props.onVote(meme)
+                            return
                         }
-                        else {
-                            vote.push(props.userName)
-                            document.getElementById(meme.id + buttonType).classList.add("active-vote")
+
+
+                        if (actionType === "upvote") {
+                            if (meme.upvotes.includes(userName)) {
+                                meme.upvotes = meme.upvotes.filter(user => userName !== user)
+                            } else {
+                                meme.upvotes = [...meme.upvotes, userName]
+                                if (meme.downvotes.includes(userName)) {
+                                    meme.downvotes = meme.downvotes.filter(user => userName !== user)
+                                }
+                            }
+                        } else if (actionType === "downvote") {
+                            if (meme.downvotes.includes(userName)) {
+                                meme.downvotes = meme.downvotes.filter(user => userName !== user)
+                            } else {
+                                meme.downvotes = [...meme.downvotes, userName]
+                                if (meme.upvotes.includes(userName)) {
+                                    meme.upvotes = meme.upvotes.filter(user => userName !== user)
+                                }
+                            }
                         }
-                        props.onVote()
+
+                        props.onVote(meme)
                     }
-                    const godModeVotes = (vote) => {
-                        vote.push("GOD")
-                        props.onVote()
-                    }
-                    const rememberButtonVoteColors = (vote) => {
-                        if (vote.indexOf(props.userName) > -1) {
-                            return ("active-vote")
-                        } else return null
-                    }
+                    // const godModeVotes = (vote) => {
+                    //     vote.push("GOD")
+                    //     props.onVote()
+                    // }
+                    // const rememberButtonVoteColors = (vote) => {
+                    //     if (vote.indexOf(props.userName) > -1) {
+                    //         return ("active-vote")
+                    //     } else return null
+                    // }
+
+                    const isUpvoteActive = meme.upvotes.includes(userName)
 
                     return (
                         <div key={meme.id} className="meme">
@@ -60,12 +96,12 @@ export function Display(props) {
                             </div>
                             <div className="buttons">
                                 <button id={meme.id + "u"} onClick={() => {
-                                    voteClick(meme.upvotes, meme.downvotes, "u")
-                                }} className={rememberButtonVoteColors(meme.upvotes)}>
+                                    voteClick("upvote")
+                                }} className={isUpvoteActive ? "active-vote" : ""}>
                                     🢁 {meme.upvotes.length}</button>
                                 <button id={meme.id + "d"} onClick={() => {
-                                    voteClick(meme.downvotes, meme.upvotes, "d")
-                                }} className={rememberButtonVoteColors(meme.downvotes)}>
+                                    voteClick("downvote")
+                                }} >
                                     🢃 {meme.downvotes.length}</button>
                             </div>
                             <hr />

@@ -3,14 +3,20 @@ import { Display } from '../logic/Display'
 
 export function Main(props) {
 
-    const memesArrayReversed = props.memesArray
-    const [memes, setMemes] = useState(props.memesArray)
+    const { memes, setMemes } = props
 
-    function onVote() {
-        setMemes([memes])
+
+    const onVote = (meme) => {
+        setMemes(memes.map(memeItem => {
+            if (meme.id === memeItem.id) {
+                return meme
+            }
+            return memeItem
+        }))
+        console.log(memes)
     }
     return (
-        <Display onVote={onVote} memesArray={memesArrayReversed} GODMODE={props.GODMODE} userName={props.userName} />
+        <Display onVote={onVote} memesArray={memes} GODMODE={props.GODMODE} userName={props.userName} />
     )
 }
 

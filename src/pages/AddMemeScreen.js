@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./AddMemeScreen.scss"
 
 export function AddMemeScreen(props) {
+    const { memes, setMemes } = props
+
     const validUrl = require('valid-url');
     const [inputs, setInputs] = useState({});
 
@@ -22,10 +24,11 @@ export function AddMemeScreen(props) {
         if (!validUrl.isUri(inputs.img)) {
             return alert("Image path must be a valid URL")
         }
-        props.memesArray.push({ id: props.memesArray.length + 1, title: inputs.title, upvotes: [], downvotes: [], img: inputs.img })
+        memes.push({ id: memes.length + 1, title: inputs.title, upvotes: [], downvotes: [], img: inputs.img })
         setInputs([])
-        console.log(props.memesArray)
+        alert("Success! Meme added!")
     }
+    setMemes(memes)
 
     return (
         <div className="add-meme-wrapper">

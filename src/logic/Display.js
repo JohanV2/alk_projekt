@@ -3,7 +3,6 @@ import "./Display.scss"
 import { userName } from "../App"
 
 export function Display(props) {
-    console.log(userName)
     return (
         <div className="memes" >
             {

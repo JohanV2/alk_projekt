@@ -5,7 +5,7 @@ export function AddMeme() {
 
     let navigate = useNavigate();
     const routeChange = () => {
-        navigate("/alk-projekt/addmeme");
+        navigate("/alk_projekt/addmeme");
     }
 
     return (

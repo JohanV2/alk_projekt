@@ -27,8 +27,9 @@ export function AddMemeScreen(props) {
         memes.push({ id: memes.length + 1, title: inputs.title, upvotes: [], downvotes: [], img: inputs.img })
         setInputs([])
         alert("Success! Meme added!")
+        setMemes(memes)
     }
-    setMemes(memes)
+
 
     return (
         <div className="add-meme-wrapper">

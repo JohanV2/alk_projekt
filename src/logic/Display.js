@@ -55,11 +55,11 @@ export function Display(props) {
                                 <img src={meme.img} loading="lazy" alt={meme.title} />
                             </div>
                             <div className="buttons">
-                                <button id={meme.id + "u"} onClick={() => {
+                                <button onClick={() => {
                                     voteClick("upvote")
                                 }} className={isUpvoteActive ? "active-vote" : ""}>
                                     🢁 {meme.upvotes.length}</button>
-                                <button id={meme.id + "d"} onClick={() => {
+                                <button onClick={() => {
                                     voteClick("downvote")
                                 }} className={isDownvoteActive ? "active-vote" : ""}>
                                     🢃 {meme.downvotes.length}</button>

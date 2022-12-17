@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/alk_projekt/static/css/main.000fa903.css",
-    "main.js": "/alk_projekt/static/js/main.b700827c.js",
+    "main.js": "/alk_projekt/static/js/main.b732a322.js",
     "index.html": "/alk_projekt/index.html",
     "main.000fa903.css.map": "/alk_projekt/static/css/main.000fa903.css.map",
-    "main.b700827c.js.map": "/alk_projekt/static/js/main.b700827c.js.map"
+    "main.b732a322.js.map": "/alk_projekt/static/js/main.b732a322.js.map"
   },
   "entrypoints": [
     "static/css/main.000fa903.css",
-    "static/js/main.b700827c.js"
+    "static/js/main.b732a322.js"
   ]
 }

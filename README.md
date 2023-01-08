@@ -4,6 +4,10 @@
 Check meme application live at:
 https://johanv2.github.io/alk_projekt/
 
+Setup:
+- npm install
+- npm start 
+
 Features:
 - 4 tabs containing:
     - `99gag`: all memes (sorted from latest to oldest memes)
